@@ -122,3 +122,12 @@ chatbotWindow.addEventListener('transitionend', () => {
     chatbotInput.focus();
   }
 });
+// After typeWriter is called, send message to Appian parent
+setTimeout(() => {
+  // Send the last user input and bot reply to Appian
+  window.parent.postMessage({
+    type: 'chatbotData',
+    input: userMsg,
+    output: reply
+  }, '*');
+}, 1200); // Adjust timing to after typeWriter finishes

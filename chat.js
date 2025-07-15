@@ -126,7 +126,7 @@ chatbotWindow.addEventListener('transitionend', () => {
 setTimeout(() => {
   // Send the last user input and bot reply to Appian
   window.parent.postMessage({
-    type: 'chatbotData',
+   
     input: userMsg,
     output: reply
   }, '*');
